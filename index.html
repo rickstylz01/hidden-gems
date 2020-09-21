@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/ico" href="/favicon.ico" />
+  <title>Gems</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <header>
+    <h1>Hidden Gems</h1>
+  </header>
+
+  <main>
+    <!--Intro section-->
+    <section class="wrapper">
+      <article class="welcome">
+        <div class="group">
+          <form>
+            <fieldset id="location">
+              <legend class="legend-label"><h2>Enter Location:</h2></legend>
+              <label for="city-name">Please enter city:</label><br>
+              <input type="text" id="city-name" required name="city-name" placeholder="Los Angeles"><br><br>
+
+              <label for="state-name">Please enter state:</label><br>
+              <input type="text" id="state-name" required name="state-name" placeholder="California"><br><br>
+
+              <button id="submit-button" type="button" input="submit">
+                Submit
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </article>
+    </section>
+
+    <h3>You are here:</h3>
+    <div id="map"></div>
+
+  </main>
+
+  <footer id="footer">
+
+  </footer>
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQ2tXUtV8DRE5ANMlH66vAboyO2BM7Rfo&callback=initMap">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
