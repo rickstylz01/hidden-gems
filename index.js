@@ -2,8 +2,7 @@
 
 // Initialize and add the map
 function initMap() {
-  //map options
-  const westLawn = { lat: 41.7787, lng: -87.7228}
+  //map options 
   let options = {
     zoom: 10,
     center: { lat: 41.8781, lng: -87.6298 }
@@ -11,16 +10,43 @@ function initMap() {
 
   //new map
   const map = new google.maps.Map(document.getElementById('map'), options);
+  
+  //location coordinates
+  let locations = [
+    ['Pilsen', 41.8525, -87.6563, 2],
+    ['West Lawn', 41.7787, -87.7228, 1]
+  ]
 
-  //add marker
-  var marker = new google.maps.Marker({ 
-    position: westLawn, 
-    map: map,
-    draggable: true,
-    animation: google.maps.Animation.DROP
-  });
-  marker.addListener('click', toggleBounce);
+  var infowindow = new google.maps.InfoWindow();
+  var i;
+
+  //Loop that creates icons for multiple locations
+  for (i = 0; i < locations.length; i++) {
+    let image = "images/diamond-sm.png";
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+      map: map,
+      draggable: true,
+      animation: google.maps.Animation.DROP,
+      icon: image
+    });
+    marker.addListener('click', toggleBounce);
+  }
+
+  //Add Marker Function 
+  // function addMarker(coordinates) {
+  //   let image = "images/diamond-sm.png";
+  //   var marker = new google.maps.Marker({
+  //     position: coordinates, 
+  //     map: map,
+  //     draggable: true,
+  //     animation: google.maps.Animation.DROP,
+  //     icon: image
+  //   });
+  //   marker.addListener('click', toggleBounce);
+  // }
 }
+
 
 //marker animation function
 function toggleBounce() {
