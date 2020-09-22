@@ -6,10 +6,12 @@
 
 body {
   margin: 0;
+  background-color: bisque;
 }
 
-h1 {
-  color: darkturquoise;
+h1,
+body {
+  color: slategray;
 }
 
 .hidden {

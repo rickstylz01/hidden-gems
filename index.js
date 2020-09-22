@@ -10,7 +10,7 @@ function initMap() {
 
   //new map
   const map = new google.maps.Map(document.getElementById('map'), options);
-  
+
   //location coordinates
   let locations = [
     ['Pilsen', 41.8525, -87.6563, 2],
@@ -32,19 +32,6 @@ function initMap() {
     });
     marker.addListener('click', toggleBounce);
   }
-
-  //Add Marker Function 
-  // function addMarker(coordinates) {
-  //   let image = "images/diamond-sm.png";
-  //   var marker = new google.maps.Marker({
-  //     position: coordinates, 
-  //     map: map,
-  //     draggable: true,
-  //     animation: google.maps.Animation.DROP,
-  //     icon: image
-  //   });
-  //   marker.addListener('click', toggleBounce);
-  // }
 }
 
 
