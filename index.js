@@ -8,15 +8,58 @@ function initMap() {
     zoom: 10,
     center: { lat: 41.8781, lng: -87.6298 }
   }
+
   //new map
   const map = new google.maps.Map(document.getElementById('map'), options);
+
   //add marker
-  const marker = new google.maps.Marker({
-    postion: westLawn,
-    map: map
+  var marker = new google.maps.Marker({ 
+    position: westLawn, 
+    map: map,
+    draggable: true,
+    animation: google.maps.Animation.DROP
   });
+  marker.addListener('click', toggleBounce);
 }
 
+//marker animation function
+function toggleBounce() {
+  if (marker.getAnimation() !== null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
+}
+
+//drop timeout for markers
+function drop() {
+  clearMarkers();
+
+  for (let i = 0; i < neighborhoods.length; i++) {
+    addMarkerWithTimeout(neighborhoods[i], i * 200);
+  }
+}
+
+function addMarkerWithTimeout(position, timeout) {
+  window.setTimeout(() => {
+    markers.push(
+      new google.maps.Marker({
+        position: position,
+        map,
+        animation: google.maps.Animation.DROP
+      })
+    );
+  }, timeout);
+}
+
+function clearMarkers() {
+  for (let i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers = [];
+}
+
+//search url
 let searchUrl = "https://maps.googleapis.com/maps/api/js";
 let apiKey = "AIzaSyDQ2tXUtV8DRE5ANMlH66vAboyO2BM7Rfo"
 
