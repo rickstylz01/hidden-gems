@@ -11,5 +11,33 @@ function initMap() {
       center: mapCenter
     });
   // The marker, positioned at mapCenter variable
-  var marker = new google.maps.Marker({ position: mapCenter, map: map });
+  var marker = new google.maps.Marker({ 
+      position: mapCenter, 
+      map: map 
+  });
+
+  //create input variable for user input
+  var input = document.getElementById('pac-input');
+  //places input control in the top left corner of the map
+  // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+  var autocomplete = new google.maps.places.Autocomplete(input);
+  autocomplete.bindTo('bounds', map)
+
+  // var infowindow = new google.maps.InfoWindow();
+
+  // autocomplete.addListener('place_changed', function() {
+  //   infowindow.close();
+  //   marker.setVisible(false);
+  //   var place = autocomplete.getPlace();
+  //   if(!place.geometry) {
+  //     window.alert("Autocomplete's returned place contains no geometry");
+  //     return;
+  //   }
+
+  //   if(place.geometry.viewport)
+  // }); 
 }
+
+
+
