@@ -25,7 +25,7 @@
               <legend class="legend-label"><h2>Enter Location:</h2></legend>
 
               <label for="city-name">What are you in the mood for?</label><br>
-              <input id="user-input" class="controls" type="text" required placeholder="city" name="user-input"><br><br>
+              <input id="autocomplete" class="controls" type="text" required placeholder="Enter a place" name="au tocomplete"><br><br>
 
               <button id="submit-button" type="button" input="submit">
                 Submit
@@ -44,7 +44,7 @@
   <footer id="footer">
 
   </footer>
-  <script defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDQ2tXUtV8DRE5ANMlH66vAboyO2BM7Rfo&callback=initMap&libraries=places" async defer>
+  <script defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDQ2tXUtV8DRE5ANMlH66vAboyO2BM7Rfo&libraries=places&callback=initAutocomplete&callback=initMap" async defer>
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
   <script src="index.js"></script>

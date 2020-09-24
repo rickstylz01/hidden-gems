@@ -8,13 +8,22 @@ function initMap() {
     zoom: 10
   });
 
-  let marker = new google.maps.Marker(
-    {
-      position: mapCenter,
-      map: map
-    }
-  )
+  // let marker = new google.maps.Marker(
+  //   {
+  //     position: mapCenter,
+  //     map: map
+  //   }
+  // )
 }
 
+let autocomplete;
+function initAutocomplete() {
+  autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),
+    {
+      types: ['establishment'],
+      componentRestrictions: { 'country': ['USA'] },
+      fields: ['place_id', 'geometry', 'name']
+    });
+}
 
 
