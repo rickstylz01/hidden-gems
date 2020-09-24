@@ -8,14 +8,14 @@ function initMap() {
     zoom: 10
   });
 
-  // let marker = new google.maps.Marker(
-  //   {
-  //     position: mapCenter,
-  //     map: map
-  //   }
-  // )
+  let marker = new google.maps.Marker(
+    {
+      position: mapCenter,
+      map: map
+    }
+  )
 }
-
+// Initialize add autocomplete 
 let autocomplete;
 function initAutocomplete() {
   autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),
@@ -24,6 +24,43 @@ function initAutocomplete() {
       componentRestrictions: { 'country': ['USA'] },
       fields: ['place_id', 'geometry', 'name']
     });
+
+  // When the user selects an address from the dropdown, populate the address fields in the form.
+  autocomplete.addListener('place_changed', onPlaceChanged);
+}
+
+function onPlaceChanged() {
+  var place = autocomplete.getPlace();
+
+  if(!place.geometry) {
+    //User did not select a predection; reset the input field
+    document.getElementById('autocomplete').placeholder = 'Enter a place';
+  } else {
+    //Display details about the valid place
+    document.getElementById('details').innerHTML = place.name;
+  }
+
+  //fire control to retrieve predictions programatticaly
+  var displaySuggestions = (predictions, status) => {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      predictions.forEach((prediction) => {
+        console.log(prediction.description);
+      });
+    }
+  };
+
+  var service = new google.maps.places.AutocompleteService();
+
+  service.getQueryPredictions(
+    { input: 'pizza in Chicago' },
+    displaySuggestions
+  );
 }
 
 
+
+
+function initialize() {
+  initMap();
+  initAutocomplete();
+}
