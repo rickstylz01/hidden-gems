@@ -2,7 +2,7 @@
 
 // Initialize and add the map
 function initMap() {
-  const mapCenter = { lat: 41.8781, lng: -87.6298 }
+  const mapCenter = { lat: 41.8781, lng: -87.6298 };
   let map = new google.maps.Map(document.getElementById('map'), {
     center: mapCenter,
     zoom: 10
@@ -15,7 +15,8 @@ function initMap() {
     }
   )
 }
-// Initialize add autocomplete 
+
+// Initialize and add autocomplete 
 let autocomplete;
 function initAutocomplete() {
   autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),
@@ -31,34 +32,14 @@ function initAutocomplete() {
 
 function onPlaceChanged() {
   var place = autocomplete.getPlace();
-
-  if(!place.geometry) {
-    //User did not select a predection; reset the input field
+  if (!place.geometry) {
+    //User did not select a prediction; reset the input field
     document.getElementById('autocomplete').placeholder = 'Enter a place';
-  } else {
-    //Display details about the valid place
-    document.getElementById('details').innerHTML = place.name;
+  }  else {
+    //Display details about the valid place 
+    document.getElementById('autocomplete').innerHTML = place.name;
   }
-
-  //fire control to retrieve predictions programatticaly
-  var displaySuggestions = (predictions, status) => {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      predictions.forEach((prediction) => {
-        console.log(prediction.description);
-      });
-    }
-  };
-
-  var service = new google.maps.places.AutocompleteService();
-
-  service.getQueryPredictions(
-    { input: 'pizza in Chicago' },
-    displaySuggestions
-  );
 }
-
-
-
 
 function initialize() {
   initMap();
