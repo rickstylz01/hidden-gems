@@ -1,19 +1,30 @@
 'use strict';
 
 // Initialize and add the map
+var infowindow;
 function initMap() {
   const mapCenter = { lat: 41.8781, lng: -87.6298 };
+  
   let map = new google.maps.Map(document.getElementById('map'), {
     center: mapCenter,
     zoom: 10
   });
 
-  let marker = new google.maps.Marker(
-    {
-      position: mapCenter,
-      map: map
+  infowindow = new google.maps.InfoWindow();
+  
+  var marker = new google.maps.Marker({
+    position: mapCenter,
+    map: map,
+    animation: google.maps.Animation.DROP
+  });
+    
+  function drop() {
+    for (var i = 0; i < markerArray.length; i++) {
+      setTimeout(function () {
+        addMarkerMethod();
+      }, i * 200);
     }
-  )
+  } 
 }
 
 // Initialize and add autocomplete 
@@ -37,7 +48,7 @@ function onPlaceChanged() {
     document.getElementById('autocomplete').placeholder = 'Enter a place';
   }  else {
     //Display details about the valid place 
-    document.getElementById('autocomplete').innerHTML = place.name;
+    document.getElementById('details').innerHTML = place.name;
   }
 }
 
