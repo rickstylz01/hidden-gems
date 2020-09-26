@@ -6,8 +6,7 @@ function initMap() {
     placeTypePreferences: [
       'bakery', 
       'cafe', 
-      'restaurant', 
-      'tourist_attraction'
+      'restaurant'
     ],
     maxPlaceCount: 24,
   });
@@ -20,8 +19,7 @@ function initMap() {
 
   const card = document.getElementById("pac-card");
 
-  const input = document.getElementById("pac-input");
-
+  const input = document.getElementById("autocomplete");
   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
 
   const autocomplete = new google.maps.places.Autocomplete(input);
@@ -30,15 +28,23 @@ function initMap() {
   // so that the autocomplete requests use the current map bounds for the
   // bounds option in the request.
   autocomplete.bindTo("bounds", map);
+
   // Set the data fields to return when the user selects a place.
   autocomplete.setFields(["address_components", "geometry", "icon", "name"]);
+
   const infowindow = new google.maps.InfoWindow();
+
   const infowindowContent = document.getElementById("infowindow-content");
+
   infowindow.setContent(infowindowContent);
-  const marker = new google.maps.Marker({
-    map,
-    anchorPoint: new google.maps.Point(0, -29),
-  });
+
+  const marker = new google.maps.Marker(
+    {
+      map,
+      anchorPoint: new google.maps.Point(0, -29),
+    }
+  );
+
   autocomplete.addListener("place_changed", () => {
     infowindow.close();
     marker.setVisible(false);
@@ -80,4 +86,8 @@ function initMap() {
     infowindowContent.children["place-address"].textContent = address;
     infowindow.open(map, marker);
   });
+}
+
+function initialize() {
+  initMap();
 }
