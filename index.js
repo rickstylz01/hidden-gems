@@ -18,7 +18,6 @@ function initMap() {
   });
 
   const card = document.getElementById("pac-card");
-
   const input = document.getElementById("autocomplete");
   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
 
@@ -87,6 +86,38 @@ function initMap() {
     infowindow.open(map, marker);
   });
 }
+
+
+
+
+
+// const searchUrl = "https://maps.googleapis.com/maps/api/js";
+// const apiKey = "O0bRxrneaYkbE13IJgdL9zcGKa20TqseF5gqaJkc";
+
+// function formatQueryParams(params) {
+//   const queryItems = Object.keys(params)
+//     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+//   return queryItems.join('&');
+// }
+
+// function generateRequestUrl(stateNames, maxResults) {
+//   let params = {
+//     v: 3.exp,
+//     key: apiKey,
+//     ca
+    
+//   }
+
+//   let queryString = formatQueryParams(params);
+//   return `${searchUrl}?${queryString}&stateCode=${stateNames.join()}`
+// }
+
+// function getNationalPark(stateNames, maxResults = 10) {
+//   let requestUrl = generateRequestUrl(stateNames, maxResults);
+//   fetch(requestUrl)
+//     .then(response => response.json())
+//     .then(responseJson => displayToDom(responseJson))
+// }
 
 function initialize() {
   initMap();
