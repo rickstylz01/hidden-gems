@@ -14,10 +14,6 @@ body {
   color: slategray;
 }
 
-.hidden {
-  display: none;
-}
-
 /*--form labels--*/
 .wrapper {
   width: 500px;
