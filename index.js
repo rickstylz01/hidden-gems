@@ -1,6 +1,14 @@
 function initMap() {
   const myCoordinates = { lat: 41.878113, lng: -87.629799 };
 
+  //Search bounds
+  let bigBounds = {
+    north: 42.3256,
+    south: 41.7397,
+    west: -88.2040,
+    east: -87.4548,
+  };
+
   const lcMapView = new google.maps.localContext.LocalContextMapView({
     element: document.querySelector('#map'),
     placeTypePreferences: [
@@ -9,6 +17,8 @@ function initMap() {
       'restaurant'
     ],
     maxPlaceCount: 24,
+    // locationRestriction: bigBounds,
+    directionsOptions: { origin: myCoordinates }
   });
 
   const map = lcMapView.map;
