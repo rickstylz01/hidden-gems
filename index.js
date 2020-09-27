@@ -139,10 +139,19 @@ function initMap() {
   };
 
   const autocomplete = new google.maps.places.Autocomplete(input, options);
-  autocomplete.setFields(['address_components', 'geometry', 'name']);
+  autocomplete.setFields(
+    [
+      'address_components', 
+      'geometry', 
+      'name'
+    ]
+  );
 
   // Load a Local Context map when the user selects an address
-  let originLocation = { lat: 37.402105, lng: -122.081974 };
+  let originLocation = { 
+    lat: 37.402105, 
+    lng: -122.081974 
+  };
 
   autocomplete.addListener('place_changed', async () => {
     const place = autocomplete.getPlace();
@@ -187,7 +196,7 @@ function fillLocalContext(home) {
   const originMarker = new google.maps.Marker({
     position: home,
     map: map,
-    icon: './home.png',
+    icon: 'images/home-icon.png',
     zIndex: 30,
   });
 }
