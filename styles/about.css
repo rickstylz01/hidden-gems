@@ -71,6 +71,10 @@ p
   color: tomato;
 }
 
+.hidden {
+  display: none;
+}
+
 /*-- Desktop --*/
 @media all and (min-width: 800px) {
   .wrapper {
