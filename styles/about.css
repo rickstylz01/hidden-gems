@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap');
+
+
+/*-- Structure --*/
+* {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  background-image: url('../images/gem-plate-lt2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+
+main {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 0;
+}
+
+/*-- Mobile --*/
+header {
+  margin-top: 0;
+  margin-bottom: 40px;
+  height: 130px;
+}
+
+header h1 {
+  margin-top: 0;
+  padding-top: 40px;
+  font-size: 40px;
+}
+
+p {
+  font-family: 'Quicksand', cursive;
+  font-size: 30px;
+}
+
+body,
+header,
+footer p {
+  font-family: 'Pacifico', cursive;
+}
+
+footer {
+  margin: auto;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer,
+header {
+  width: 100%;
+  background-color: white;
+}
+
+header h1,
+.legend-label,
+p
+ {
+  color: tomato;
+}
+
+/*-- Desktop --*/
+@media all and (min-width: 800px) {
+  .wrapper {
+    width: 500px;
+    margin: auto;
+    padding: 20px 40px 20px 40px;
+  }
+
+  #autocomplete {
+    width: 400px;
+  }
+}

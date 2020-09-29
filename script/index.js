@@ -137,12 +137,11 @@ function initMap() {
       country: 'us'
     }
   };
-
   const autocomplete = new google.maps.places.Autocomplete(input, options);
   autocomplete.setFields(
     [
       'address_components', 
-      'geometry', 
+      'geometry',
       'name'
     ]
   );
@@ -153,6 +152,7 @@ function initMap() {
     lng: -122.081974 
   };
 
+  //Listener for autocomplete action
   autocomplete.addListener('place_changed', async () => {
     const place = autocomplete.getPlace();
 
@@ -181,7 +181,7 @@ function fillLocalContext(home) {
       { type: 'bakery', weight: 2 },
       { type: 'cafe', weight: 1 },
       { type: 'restaurant', weight: 1 },
-      { type: 'supermarket', weight: 2 },
+      { type: 'supermarket', weight: 3 },
     ],
     maxPlaceCount: 24
   });
@@ -200,6 +200,8 @@ function fillLocalContext(home) {
     zIndex: 30,
   });
 }
+
+autocomplete.bindTo('bounds', map);
 
 function initialize() {
   initMap();
