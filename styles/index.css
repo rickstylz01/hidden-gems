@@ -20,14 +20,7 @@ body {
   flex-direction: column;
 }
 
-#form-container,
-#description-container {
-  width: 80%;
-  margin: auto;
-}
-
 main {
-  height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   margin-bottom: 0;
 }
@@ -50,18 +43,29 @@ p {
   font-size: 30px;
 }
 
-body,
-header,
-footer p {
-  font-family: 'Pacifico', cursive;
-}
-
 footer {
   margin: auto;
 }
 
 footer p {
   margin: 0;
+}
+
+.legend-label,
+h3 {
+  font-family: 'Quicksand', cursive;
+}
+
+#form-container,
+#description-container {
+  width: 80%;
+  margin: auto;
+}
+
+body,
+header,
+footer p {
+  font-family: 'Pacifico', cursive;
 }
 
 footer,
@@ -71,14 +75,11 @@ header {
 }
 
 header h1,
+h3,
 .legend-label,
 p
  {
   color: tomato;
-}
-
-.hidden {
-  display: none;
 }
 
 #map {
@@ -86,7 +87,7 @@ p
 }
 
 /*-- Desktop --*/
-@media all and (min-width: 800px) {
+@media all and (min-width: 300px) {
   .wrapper {
     margin: auto;
     padding: 20px 40px 20px 40px;
@@ -97,7 +98,7 @@ p
   }
 
   #map { 
-    height: 400px;/* The height is 400 pixels */
+    height: 400px;
     background-color: grey;
   }
 }

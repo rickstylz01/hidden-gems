@@ -20,30 +20,23 @@
       <section id="form-container">
         <form>
           <fieldset>
-            <legend class="legend-label">
-              <h2>Enter Address:</h2>
-            </legend>
+            <legend class="legend-label"><h2>Enter Address:</h2></legend>
       
-            <label for="address-input" class="legend-label">Enter your location:</label><br>
+            <label for="address-input" class="legend-label">Use arrows and tab key or click on options:</label><br>
             <input id="autocomplete" class="controls" type="text" required placeholder="123 Fake St."
               name="autocomplete"><br><br>
       
-            <button id="submit-button" type="button" input="submit">
-              Submit
-            </button>
+            <button id="submit-button" type="button" input="submit">Submit</button>
+
           </fieldset>
         </form>
       </section>
 
       <section id="map-container">
         <div id="map-display">
-          <div class="group">
-            <div class="item">
-              <h3>You are here:</h3>
-      
-              <div id="map"></div>
-            </div>
-          </div>
+          <h3>You are here:</h3>
+  
+          <div id="map"></div>
         </div>
       </section>
 
@@ -56,28 +49,23 @@
         </div>
       </section>
 
-      <!--Map Display-->
-
     </div>
   </main>
 
   <section class="bottom">
-    <article>
-      <div class="group">
-        <div class="item">
-          <footer>
-            <p>Styled by: RM</p>
-          </footer>
-        </div>
-      </div>
-    </article>
-    
+    <div class="item">
+      <footer>
+        <p>Styled by: RM</p>
+      </footer>
+    </div>
   </section>
+
   <script defer
     src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDQ2tXUtV8DRE5ANMlH66vAboyO2BM7Rfo&callback=initialize&libraries=localContext,places&v=beta"
     async defer>
-    </script>
+  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
   <script src="/script/index.js"></script>
+
 </body>
 </html>
