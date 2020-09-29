@@ -201,8 +201,6 @@ function fillLocalContext(home) {
   });
 }
 
-autocomplete.bindTo('bounds', map);
-
 function initialize() {
   initMap();
 }
