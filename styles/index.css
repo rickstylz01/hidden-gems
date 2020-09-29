@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap');
+
 /*-- Structure --*/
 * {
   box-sizing: border-box;
@@ -7,15 +9,51 @@
 body {
   margin: 0;
   background-color: bisque;
+  font-family: 'Pacifico', cursive;
+  background-image: url('../images/gem-background-lt.jpg');
 }
 
 h1,
 body {
-  color: slategray;
+  color: white;
+  text-align: center;
 }
 
 .legend-label {
   text-align: start;
+}
+
+#navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 20px;
+  font-family: 'Quicksand', cursive;
+}
+
+header, h1 {
+  margin-top: 0;
+  margin-bottom: 40px;
+
+}
+
+header,
+#navbar,
+fieldset {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+a:link {
+  color: tomato;
+}
+
+.about {
+  font-family: 'Quicksand', cursive;
+  color: black;
+  
 }
 
 /*-- Map Styling (Mobile)--*/
@@ -35,8 +73,8 @@ body {
   }
   /*-- Map --*/
   /* Set the size of the div element that contains the map */
-  #map {
-    height: 800px;  /* The height is 400 pixels */
+  #map {  
+    height: 400px;/* The height is 400 pixels */
     width: 100%;  /* The width is the width of the web page */
     background-color: grey;
   }
