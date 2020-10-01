@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/ico" href="images/favicon.ico" />
   <title>Hidden Gems</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="/styles/index.css">
 </head>
 <body>
@@ -17,21 +19,21 @@
     
     <div class="group">
 
+      <!--Form Container-->
       <section id="form-container">
         <form>
           <fieldset>
             <legend class="legend-label"><h2>Enter Address:</h2></legend>
       
-            <label for="address-input" class="legend-label">Use arrows and tab key or click on options:</label><br>
+            <label for="address-input" class="legend-label">(Use the arrows and tab key or, click an options)</label><br>
             <input id="autocomplete" class="controls" type="text" required placeholder="123 Fake St."
               name="autocomplete"><br><br>
-      
-            <button id="submit-button" type="button" input="submit">Submit</button>
 
           </fieldset>
         </form>
       </section>
 
+      <!--Map Display Container-->
       <section id="map-container">
         <div id="map-display">
           <h3>You are here:</h3>
@@ -40,19 +42,64 @@
         </div>
       </section>
 
+      <!-- Accordian Description Containers-->
       <section id="description-container">
-        <div class="about-description">
-          <p><strong>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</strong></p>
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block" type="button" data-toggle="collapse" data-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  How to use Hidden Gems
+                </button>
+              </h2>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                Hidden Gems uses Google Autocorrect to predict user inquiries.<br><br>
+                Type in the search bar and choose your selection with either the click of your mouse or, you can use the arrow keys to select and the tab key to confirm your selection.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block collapsed" type="button" data-toggle="collapse"
+                  data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  What is Hidden Gems?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                Hidden Gems is a project created with the Google Local Context Beta API. It uses the Google Maps and Places API to locate
+                businesses, POI's, restaurant's and the like.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block collapsed" type="button" data-toggle="collapse"
+                  data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Why Hidden Gems?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                I created Hidden Gems to give light to the less known places to eat within your local community or area.  There have been many times where I've found a "hidden gem" of a restaurant that isn't overly advertised or popularly spoken about.  Many times these restaurants, cafe's, etc. go mostly unnoticed except for the locals who stop by to just get a bite to eat and end up discovering deliciously awesome food.  Now you too can enter your location and discover what hidden gems, your local area has to offer.
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-
     </div>
   </main>
 
-  <section class="bottom">
+  <section id="bottom">
     <div class="item">
       <footer>
         <p>Styled by: RM</p>
@@ -61,11 +108,16 @@
   </section>
 
   <script defer
-    src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDQ2tXUtV8DRE5ANMlH66vAboyO2BM7Rfo&callback=initialize&libraries=localContext,places&v=beta"
-    async defer>
+  src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDQ2tXUtV8DRE5ANMlH66vAboyO2BM7Rfo&callback=initialize&libraries=localContext,places&v=beta"
+  async defer>
   </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
   <script src="/script/index.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+  integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+  integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 </body>
 </html>

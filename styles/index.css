@@ -38,16 +38,36 @@ header h1 {
   font-size: 40px;
 }
 
+#map-container {
+  margin-bottom: 40px;
+}
+
+.group {
+  margin-bottom: 40px;
+}
+
+#description-container button,
+.card-body {
+  font-size: 25px;
+  font-family: 'Quicksand', cursive;
+}
+
 p {
   font-family: 'Quicksand', cursive;
   font-size: 30px;
 }
 
+.bottom {
+  justify-content: center;
+}
+
 footer {
-  margin: auto;
+  height: 100px;
 }
 
 footer p {
+  font-size: 15px;
+  padding-top: 25px;
   margin: 0;
 }
 
