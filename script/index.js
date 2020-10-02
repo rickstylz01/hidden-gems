@@ -1,4 +1,7 @@
 let map;
+let originLocation;
+
+
 const silverStyle = [{
   "elementType": "geometry",
   "stylers": [{
@@ -132,7 +135,11 @@ function initMap() {
     map.setZoom(8);
     map.setCenter(marker.getPosition());
   });
+  
+  fillLocalContext(originLocation);
+}
 
+function initAutocomplete() {
   // Build and add the Autocomplete search bar
   const input = document.getElementById('autocomplete');
   const options = {
@@ -144,17 +151,11 @@ function initMap() {
   const autocomplete = new google.maps.places.Autocomplete(input, options);
   autocomplete.setFields(
     [
-      'address_components', 
+      'address_components',
       'geometry',
       'name'
     ]
   );
-
-  // Load a Local Context map when the user selects an address
-  let originLocation = { 
-    lat: 37.402105, 
-    lng: -122.081974 
-  };
 
   //Listener for autocomplete action
   autocomplete.addListener('place_changed', async () => {
@@ -170,16 +171,14 @@ function initMap() {
     // Recenter the map to the selected address
     originLocation = place.geometry.location;
     console.log(place);
-
-    fillLocalContext(originLocation);
   });
 }
 
-function fillLocalContext(home) {
+function fillLocalContext(originLocation) {
   document.getElementById('map').innerHTML = '';
 
   const localContextMapView = new google.maps.localContext.LocalContextMapView({
-    directionsOptions: { origin: home },
+    directionsOptions: { origin: originLocation },
     element: document.getElementById('map'),
     placeTypePreferences: [
       { type: 'bakery', weight: 2 },
@@ -193,12 +192,12 @@ function fillLocalContext(home) {
   map = localContextMapView.map;
 
   map.setOptions({
-    center: home,
-    zoom: 16,
+    center: originLocation,
+    zoom: 16
   });
 
-  const originMarker = new google.maps.Marker({
-    position: home,
+  new google.maps.Marker({
+    position: originLocation,
     map: map,
     icon: 'images/home-icon.png',
     zIndex: 30,
@@ -206,12 +205,16 @@ function fillLocalContext(home) {
 }
 
 
+//--Submit Button Handler
+function revealMapContainer() {
+  $('#map-container').show();
+}
 $('#search-container').on('click', "#submit-button", function() {
-  $('#map-container').removeClass('hidden');
+  revealMapContainer();
+  initMap();
 });
-
  
 function initialize() {
-  initMap();
+  initAutocomplete();
 }
 
