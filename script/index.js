@@ -121,13 +121,17 @@ const silverStyle = [{
 }];
 
 function initMap() {
-  // Generate the placeholder map
+// Generate the placeholder map
   map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 0, lng: 0 },
     zoom: 2,
     disableDefaultUI: true,
   });
   map.setOptions({ styles: silverStyle });
+  map.addListener("click", () => {
+    map.setZoom(8);
+    map.setCenter(marker.getPosition());
+  });
 
   // Build and add the Autocomplete search bar
   const input = document.getElementById('autocomplete');
@@ -201,8 +205,13 @@ function fillLocalContext(home) {
   });
 }
 
+
+$('#search-container').on('click', "#submit-button", function() {
+  $('#map-container').removeClass('hidden');
+});
+
+ 
 function initialize() {
   initMap();
 }
-
 
