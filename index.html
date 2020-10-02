@@ -18,33 +18,34 @@
     </section>
     
     <div class="group">
-
-      <!--Form Container-->
-      <section id="form-container">
+      <!--Search Form Container-->
+      <section id="search-container">
         <form>
           <fieldset>
             <legend class="legend-label"><h2>Enter Address:</h2></legend>
-      
             <label for="address-input" class="legend-label">(Use the arrows and tab key or, click an options)</label><br>
+
             <input id="autocomplete" class="controls" type="text" required placeholder="123 Fake St."
               name="autocomplete"><br><br>
 
+            <button type="button" id="submit-button" class="btn btn-primary btm-margin" data-toggle="button" aria-pressed="false">
+              See what's around!
+            </button>
           </fieldset>
         </form>
       </section>
 
       <!--Map Display Container-->
-      <section id="map-container">
+      <section id="map-container" class="btm-margin">
         <div id="map-display">
           <h3>You are here:</h3>
-  
-          <div id="map"></div>
+          <div id="map" class="border border-warning"></div>
         </div>
       </section>
 
       <!-- Accordian Description Containers-->
       <section id="description-container">
-        <div class="accordion" id="accordionExample">
+        <div class="accordion btm-margin" id="accordionExample">
           <div class="card">
             <div class="card-header" id="headingOne">
               <h2 class="mb-0">
@@ -57,7 +58,7 @@
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
               <div class="card-body">
                 Hidden Gems uses Google Autocorrect to predict user inquiries.<br><br>
-                Type in the search bar and choose your selection with either the click of your mouse or, you can use the arrow keys to select and the tab key to confirm your selection.
+                Type in the search bar and choose your selection. Choose from the dropdown list or use the arrow keys to select your choice and the tab key to confirm it.
               </div>
             </div>
           </div>
@@ -99,14 +100,12 @@
     </div>
   </main>
 
-  <section id="bottom">
-    <div class="item">
-      <footer>
-        <p>Styled by: RM</p>
-      </footer>
-    </div>
-  </section>
+  <!-- Footer -->
+  <footer>
+    <p>Styled by: RM</p>
+  </footer>
 
+  <!--SCRIPT TAGS-->
   <script defer
   src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDQ2tXUtV8DRE5ANMlH66vAboyO2BM7Rfo&callback=initialize&libraries=localContext,places&v=beta"
   async defer>

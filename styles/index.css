@@ -38,26 +38,24 @@ header h1 {
   font-size: 40px;
 }
 
-#map-container {
-  margin-bottom: 40px;
+.btm-margin {
+  margin-bottom: 40px
 }
 
-.group {
-  margin-bottom: 40px;
+.hidden {
+  display: none;
 }
+
+/* --Map Display-- */
 
 #description-container button,
-.card-body {
+.card-body,
+p {
   font-size: 25px;
   font-family: 'Quicksand', cursive;
 }
 
-p {
-  font-family: 'Quicksand', cursive;
-  font-size: 30px;
-}
-
-.bottom {
+footer {
   justify-content: center;
 }
 
@@ -103,6 +101,7 @@ p
 }
 
 #map {
+  border: 3px;
   width: 100%;  /* The width is the width of the web page */
 }
 
