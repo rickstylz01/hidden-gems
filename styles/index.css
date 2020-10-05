@@ -40,6 +40,10 @@ header h1 {
   font-size: 40px;
 }
 
+.carousel-inner {
+  max-height: 20rem;
+}
+
 .btm-margin {
   margin-bottom: 40px
 }
