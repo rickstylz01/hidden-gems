@@ -39,10 +39,13 @@ header h1 {
   font-size: 40px;
 }
 
-/*-- Fieldset --*/
+/*-- Search Fieldset --*/
 #search-container {
-  height: 400px;
-  
+  height: 275px;
+}
+
+fieldset h2 {
+  margin-top: 40px;
 }
 
 form {
