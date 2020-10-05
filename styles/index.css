@@ -30,7 +30,6 @@ main {
 /*-- Mobile --*/
 header {
   margin-top: 0;
-  margin-bottom: 40px;
   height: 130px;
 }
 
@@ -38,6 +37,16 @@ header h1 {
   margin-top: 0;
   padding-top: 40px;
   font-size: 40px;
+}
+
+/*-- Fieldset --*/
+#search-container {
+  height: 400px;
+  
+}
+
+form {
+  background-color: black;
 }
 
 /*--Carousel Styling--*/
